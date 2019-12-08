@@ -73,9 +73,21 @@ end
 
 user_list = [
   'Neo',
+  'Morpheus',
   'Trinity'
 ]
 
 user_list.each do |username|
   User.create(username: username)
+end
+
+completed_tests_list = [
+  [1, 1],
+  [1, 3],
+  [2, 3],
+  [3, 1]
+]
+
+completed_tests_list.each do |user_id, test_id|
+  CompletedTest.create(user_id: user_id, test_id: test_id)
 end

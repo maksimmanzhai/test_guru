@@ -29,10 +29,10 @@ ActiveRecord::Schema.define(version: 2019_12_08_114421) do
 
   create_table "completed_tests", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.integer "category_id", null: false
+    t.integer "test_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["category_id"], name: "index_completed_tests_on_category_id"
+    t.index ["test_id"], name: "index_completed_tests_on_test_id"
     t.index ["user_id"], name: "index_completed_tests_on_user_id"
   end
 
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2019_12_08_114421) do
   end
 
   add_foreign_key "answers", "questions"
-  add_foreign_key "completed_tests", "categories"
+  add_foreign_key "completed_tests", "tests"
   add_foreign_key "completed_tests", "users"
   add_foreign_key "questions", "tests"
   add_foreign_key "tests", "categories"
