@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_06_194216) do
+ActiveRecord::Schema.define(version: 2019_12_08_084411) do
 
   create_table "answers", force: :cascade do |t|
     t.string "title", null: false
@@ -48,9 +48,12 @@ ActiveRecord::Schema.define(version: 2019_12_06_194216) do
     t.string "username", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "category_id"
+    t.index ["category_id"], name: "index_users_on_category_id"
   end
 
   add_foreign_key "answers", "questions"
   add_foreign_key "questions", "tests"
   add_foreign_key "tests", "categories"
+  add_foreign_key "users", "categories"
 end
