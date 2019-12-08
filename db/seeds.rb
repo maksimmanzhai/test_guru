@@ -72,10 +72,10 @@ answer_list.each do |title, question_id, correct|
 end
 
 user_list = [
-  ['Neo', 3],
-  ['Trinity', 4]
+  'Neo',
+  'Trinity'
 ]
 
-user_list.each do |username, test_id|
-  User.create(username: username, test_id: test_id)
+user_list.each do |username|
+  User.create(username: username)
 end
