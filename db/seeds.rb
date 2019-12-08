@@ -70,3 +70,12 @@ answer_list = [
 answer_list.each do |title, question_id, correct|
   Answer.create(title: title, question_id: question_id, correct: correct)
 end
+
+user_list = [
+  ['Neo', 3],
+  ['Trinity', 4]
+]
+
+user_list.each do |username, category_id|
+  User.create(username: username, category_id: category_id)
+end
