@@ -76,6 +76,6 @@ user_list = [
   ['Trinity', 4]
 ]
 
-user_list.each do |username, category_id|
-  User.create(username: username, category_id: category_id)
+user_list.each do |username, test_id|
+  User.create(username: username, test_id: test_id)
 end
