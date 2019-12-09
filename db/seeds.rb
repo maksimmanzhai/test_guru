@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 category_list = [
-  'Frontend',
-  'Backend',
-  'Machine Learning',
-  'Mobile Development'
+  ['Frontend'],
+  ['Backend'],
+  ['Machine Learning'],
+  ['Mobile Development']
 ]
 
 category_list.each do |title|
@@ -72,9 +72,9 @@ answer_list.each do |title, question_id, correct|
 end
 
 user_list = [
-  'Neo',
-  'Morpheus',
-  'Trinity'
+  ['Neo'],
+  ['Morpheus'],
+  ['Trinity']
 ]
 
 user_list.each do |username|
