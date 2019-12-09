@@ -1,7 +1,12 @@
 class Test < ApplicationRecord
   belongs_to :category
+  has_many :completed_tests
+  has_many :questions
 
-  def self.in_descending_order(title)
-    category_tests(title).order("tests.title desc").pluck("tests.title")
+  def self.in_descending_order(category)
+    joins(:category).where(categories: { title: category })
+                    .order(title: :desc)
+                    .pluck(:title)
   end
+
 end
