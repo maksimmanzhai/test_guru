@@ -1,5 +1,4 @@
 class CompletedTest < ApplicationRecord
-  belongs_to :user
-  belongs_to :test
-
+  belongs_to :user, touch: true
+  belongs_to :test, touch: true
 end
