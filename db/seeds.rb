@@ -18,11 +18,15 @@ frontend = Category.create(title: 'Frontend')
 machine_learning = Category.create(title: 'Machine Learning')
 mobile_development = Category.create(title: 'Mobile Development')
 
-ruby = Test.create(title: 'Ruby', level: 2, category_id: backend.id)
-html = Test.create(title: 'HTML', level: 0, category_id: frontend.id)
-java = Test.create(title: 'Java', level: 4, category_id: mobile_development.id)
-golang = Test.create(title: 'Golang', level: 3, category_id: frontend.id)
-python = Test.create(title: 'Python', level: 2, category_id: machine_learning.id)
+neo = User.create(username: 'Neo')
+trinity = User.create(username: 'Trinity')
+morpheus = User.create(username: 'Morpheus')
+
+ruby = Test.create(title: 'Ruby', level: 2, category_id: backend.id, user_id: neo.id)
+html = Test.create(title: 'HTML', level: 0, category_id: frontend.id, user_id: neo.id)
+java = Test.create(title: 'Java', level: 4, category_id: mobile_development.id, user_id: trinity.id)
+golang = Test.create(title: 'Golang', level: 3, category_id: frontend.id, user_id: trinity.id)
+python = Test.create(title: 'Python', level: 2, category_id: machine_learning.id, user_id: morpheus.id)
 
 question01 = Question.create(body: 'С помощью какого тега в HTML создаются ссылки?', test_id: html.id)
 question02 = Question.create(body: 'Какой из следующих операторов уменьшает целочисленное значение на единицу в Go?', test_id: golang.id)
@@ -53,10 +57,6 @@ answer05_01 = Answer.create(title: '256 символов', question_id: question
 answer05_02 = Answer.create(title: '1024 символов', question_id: question05.id, correct: false)
 answer05_03 = Answer.create(title: '8 бит', question_id: question05.id, correct: false)
 answer05_04 = Answer.create(title: 'не ограничена', question_id: question05.id, correct: true)
-
-neo = User.create(username: 'Neo')
-trinity = User.create(username: 'Trinity')
-morpheus = User.create(username: 'Morpheus')
 
 completed_test01 = CompletedTest.create(user_id: neo.id, test_id: ruby.id)
 completed_test02 = CompletedTest.create(user_id: neo.id, test_id: html.id)
