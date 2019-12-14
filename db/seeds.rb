@@ -12,6 +12,7 @@ Question.destroy_all
 Test.destroy_all
 User.destroy_all
 CompletedTest.destroy_all
+Author.destroy_all
 
 backend = Category.create(title: 'Backend')
 frontend = Category.create(title: 'Frontend')
@@ -22,11 +23,17 @@ neo = User.create(username: 'Neo')
 trinity = User.create(username: 'Trinity')
 morpheus = User.create(username: 'Morpheus')
 
-ruby = Test.create(title: 'Ruby', level: 2, category_id: backend.id, user_id: neo.id)
-html = Test.create(title: 'HTML', level: 0, category_id: frontend.id, user_id: neo.id)
-java = Test.create(title: 'Java', level: 4, category_id: mobile_development.id, user_id: trinity.id)
-golang = Test.create(title: 'Golang', level: 3, category_id: frontend.id, user_id: trinity.id)
-python = Test.create(title: 'Python', level: 2, category_id: machine_learning.id, user_id: morpheus.id)
+ruby = Test.create(title: 'Ruby', level: 2, category_id: backend.id)
+html = Test.create(title: 'HTML', level: 0, category_id: frontend.id)
+java = Test.create(title: 'Java', level: 4, category_id: mobile_development.id)
+golang = Test.create(title: 'Golang', level: 3, category_id: frontend.id)
+python = Test.create(title: 'Python', level: 2, category_id: machine_learning.id)
+
+author1 = Author.create(user_id: neo.id, test_id: ruby.id)
+author1 = Author.create(user_id: neo.id, test_id: html.id)
+author1 = Author.create(user_id: trinity.id, test_id: java.id)
+author1 = Author.create(user_id: trinity.id, test_id: golang.id)
+author1 = Author.create(user_id: morpheus.id, test_id: python.id)
 
 question01 = Question.create(body: 'С помощью какого тега в HTML создаются ссылки?', test_id: html.id)
 question02 = Question.create(body: 'Какой из следующих операторов уменьшает целочисленное значение на единицу в Go?', test_id: golang.id)
