@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Answer.destroy_all
 Category.destroy_all
+Answer.destroy_all
 Question.destroy_all
 Test.destroy_all
 User.destroy_all
@@ -23,7 +23,7 @@ trinity = User.create(username: 'Trinity')
 morpheus = User.create(username: 'Morpheus')
 
 ruby = Test.create(title: 'Ruby', level: 2, category_id: backend.id, author_id: neo.id)
-html = Test.create(title: 'HTML', level: 0, category_id: frontend.id, author_id: neo.id)
+html = Test.create(title: 'HTML', level: 0, category_id: frontend.id, author_id: trinity.id)
 java = Test.create(title: 'Java', level: 4, category_id: mobile_development.id, author_id: trinity.id)
 golang = Test.create(title: 'Golang', level: 3, category_id: frontend.id, author_id: trinity.id)
 python = Test.create(title: 'Python', level: 2, category_id: machine_learning.id, author_id: morpheus.id)
@@ -62,3 +62,4 @@ completed_test01 = CompletedTest.create(user_id: neo.id, test_id: ruby.id)
 completed_test02 = CompletedTest.create(user_id: neo.id, test_id: html.id)
 completed_test03 = CompletedTest.create(user_id: trinity.id, test_id: java.id)
 completed_test04 = CompletedTest.create(user_id: morpheus.id, test_id: python.id)
+completed_test04 = CompletedTest.create(user_id: morpheus.id, test_id: golang.id)
