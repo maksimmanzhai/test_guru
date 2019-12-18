@@ -13,10 +13,10 @@ Test.destroy_all
 User.destroy_all
 CompletedTest.destroy_all
 
-backend = Category.create(title: 'Backend')
 frontend = Category.create(title: 'Frontend')
 machine_learning = Category.create(title: 'Machine Learning')
 mobile_development = Category.create(title: 'Mobile Development')
+backend = Category.create(title: 'Backend')
 
 neo = User.create(username: 'Neo')
 trinity = User.create(username: 'Trinity')
