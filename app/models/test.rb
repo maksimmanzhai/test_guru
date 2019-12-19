@@ -11,8 +11,6 @@ class Test < ApplicationRecord
   scope :medium, -> { difficulty_level(2..4) }
   scope :hard, -> { difficulty_level(5..Float::INFINITY) }
 
-  def self.in_descending_order(category)
-    joins(:category).where(categories: { title: category } ).order(title: :desc).pluck(:title)
-  end
+  scope :in_descending_order, ->(category) { joins(:category).where(categories: { title: category } ).order(title: :desc).pluck(:title) }
 
 end
