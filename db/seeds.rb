@@ -6,12 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Category.destroy_all
+CompletedTest.destroy_all
 Answer.destroy_all
 Question.destroy_all
 Test.destroy_all
 User.destroy_all
-CompletedTest.destroy_all
+Category.destroy_all
 
 frontend = Category.create(title: 'Frontend')
 machine_learning = Category.create(title: 'Machine Learning')
