@@ -1,41 +1,41 @@
 class QuestionsController < ApplicationController
-  # list of all questions
+
+  before_action :find_question, only: %i[show]
+  before_action :find_test, only: %i[new, create, index]
+
   def index
-    @questions = Question.all
+    @questions = @test.questions
   end
 
-  # view of question
-  def show
-    @question = Question.find(params[:id])
+  def create
+    question = Question.create(question_params)
+    question.save
+    render plain: question.inspect
   end
 
   def new
     @question = Question.new
   end
 
-  # creating of question
-  def create
-    @question = Question.new(question_params)
-
-    if @question.save
-      redirect_to @question
-    else
-      render 'new'
-    end
+  def show
+    render inline: '<%= @question.body %>'
   end
 
-  # destroy of question
   def destroy
-    @question = Question.find(params[:id])
-    @question.destroy
-
-    redirect_to questions_path
   end
 
   private
-  def question_params
-    params.require(:question).permit(:body)
-  end
 
+    def find_question
+      @question = Question.find(params[:id])
+    end
+
+    def find_test
+      @test = Test.find(params[:id])
+    end
+
+    def question_params
+      params.require(:question).permit(:body, :test_id)
+    end
 
 end

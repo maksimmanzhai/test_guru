@@ -33,6 +33,7 @@ question02 = Question.create(body: 'Какой из следующих опер�
 question03 = Question.create(body: 'Какую задачу будет пытаться выполнить команда rake вызванная без аргументов?', test_id: ruby.id)
 question04 = Question.create(body: 'Что выведет следующая строка кода? print ("{0:*^15".format(1234567))?', test_id: python.id)
 question05 = Question.create(body: 'Какая максимальная длина имени переменной допустима в Java в соответствии со спецификацией?', test_id: java.id)
+question06 = Question.create(body: 'Какой символ необходимо использовать для определения параметра метода, принимающего аргументы переменной длинны?', test_id: ruby.id)
 
 answer01_01 = Answer.create(title: '<a>', question_id: question01.id, correct: true)
 answer01_02 = Answer.create(title: '<b>', question_id: question01.id, correct: false)
@@ -57,6 +58,11 @@ answer05_01 = Answer.create(title: '256 символов', question_id: question
 answer05_02 = Answer.create(title: '1024 символов', question_id: question05.id, correct: false)
 answer05_03 = Answer.create(title: '8 бит', question_id: question05.id, correct: false)
 answer05_04 = Answer.create(title: 'не ограничена', question_id: question05.id, correct: true)
+
+answer06_01 = Answer.create(title: '*', question_id: question06.id, correct: true)
+answer06_02 = Answer.create(title: '&', question_id: question06.id, correct: false)
+answer06_03 = Answer.create(title: '^', question_id: question06.id, correct: false)
+answer06_04 = Answer.create(title: '**', question_id: question06.id, correct: false)
 
 completed_test01 = CompletedTest.create(user_id: neo.id, test_id: ruby.id)
 completed_test02 = CompletedTest.create(user_id: neo.id, test_id: html.id)
