@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
 
-  before_action :find_question, only: %i[show edit destroy]
+  before_action :find_question, only: %i[show destroy edit update]
   before_action :find_test, only: %i[index create new]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
@@ -12,13 +12,14 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     if @question.save
-      render plain: "Question was created!"
+      redirect_to @question
     else
-      render plain: "Question was not created!"
+      render :new
     end
   end
 
   def new
+    @question = Question.new
   end
 
   def edit
@@ -28,6 +29,11 @@ class QuestionsController < ApplicationController
   end
 
   def update
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      render :edit
+    end
   end
 
   def destroy
