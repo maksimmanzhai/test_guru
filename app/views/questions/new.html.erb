@@ -9,4 +9,6 @@
   </p><br>
   <input name="question[test_id]" value="<%= params[:test_id] %>" type="hidden">
   <input type="submit" value="Create">
-</form>
+</form><br>
+
+<%= link_to "Back to test", test_path(@test.id) %>
