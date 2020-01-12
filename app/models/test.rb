@@ -4,6 +4,7 @@ class Test < ApplicationRecord
   has_many :questions
   has_many :answers, through: :questions
   has_many :completed_tests
+  has_many :users, through: :completed_tests
 
   scope :difficulty_level, ->(level) { where(level: level) }
   scope :easy, -> { difficulty_level(0..1) }
