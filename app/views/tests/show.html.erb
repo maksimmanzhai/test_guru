@@ -11,10 +11,12 @@
   <% @test.questions.each do |question| %>
   <tr>
     <td><%= question.body %></td>
-    <td><%= link_to 'Show question', question %></td>
-    <td><%= link_to 'Destroy question', question, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+    <td><%= link_to 'Show', question %></td>
+    <td><%= link_to 'Edit', edit_question_path(question) %></td>
+    <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?'} %></td>
   </tr>
   <% end %>
 </table><br>
 
-<%= link_to "New question", new_test_question_path(@test.id) %>
+<%= link_to "New question", new_test_question_path(@test) %>
+<%= link_to "Back", tests_path %>

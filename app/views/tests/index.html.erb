@@ -3,12 +3,10 @@
   <tr>
     <th>Title</th>
     <th>Level</th>
+    <th>Questions</th>
+    <th>Action</th>
   </tr>
-  <% @tests.each do |test| %>
-  <tr>
-    <td><%= test.title %></td>
-    <td><%= test.level %></td>
-    <td><%= link_to 'Show test', test_path(test) %></td>
-  </tr>
-  <% end %>
+
+  <%= render @tests %>
+
 </table>
