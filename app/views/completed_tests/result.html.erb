@@ -1,1 +1,3 @@
 <h1>The <%= @completed_test.test.title %> Test was completed</h1>
+
+<%= link_to 'Back to test', test_path(@completed_test.test.id) %>
