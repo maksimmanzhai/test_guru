@@ -11,6 +11,8 @@ class TestsController < ApplicationController
   end
 
   def new
+    @user_options = User.all.map{ |u| [ u.username, u.id ] }
+    @category_options = Category.all.map{ |c| [ c.title, c.id ] }
     @test = Test.new
   end
 
@@ -47,7 +49,7 @@ class TestsController < ApplicationController
   private
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id)
+    params.require(:test).permit(:title, :level, :category_id, :author_id)
   end
 
   def set_test
