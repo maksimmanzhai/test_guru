@@ -6,7 +6,7 @@ class QuestionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def create
-    @question = Question.new(question_params)
+    @question = @test.questions.new(question_params)
 
     if @question.save
       redirect_to @question
