@@ -3,6 +3,10 @@ class TestsController < ApplicationController
   before_action :set_test, only: %i[show edit update destroy start]
   before_action :set_user, only: :start
 
+  before_action :set_user_select, only: %i[new edit]
+  before_action :set_category_select, only: %i[new edit]
+
+
   def index
     @tests = Test.all
   end
@@ -11,8 +15,6 @@ class TestsController < ApplicationController
   end
 
   def new
-    @user_options = User.all.map{ |u| [ u.username, u.id ] }
-    @category_options = Category.all.map{ |c| [ c.title, c.id ] }
     @test = Test.new
   end
 
@@ -58,6 +60,14 @@ class TestsController < ApplicationController
 
   def set_user
     @user = User.first
+  end
+  
+  def set_user_select
+    @user_options = User.all.map{ |u| [ u.username, u.id ] }
+  end
+
+  def set_category_select
+    @category_options = Category.all.map{ |c| [ c.title, c.id ] }
   end
 
 end
