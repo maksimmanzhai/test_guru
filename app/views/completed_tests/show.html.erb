@@ -1,5 +1,5 @@
-<h1>Passing the <%= @completed_test.test.title %> Test</h1>
-
+<h1><%= completed_test_header(@completed_test) %></h1>
+<h2><%= progress(@completed_test) %></h2>
 <b>
   <%= @completed_test.current_question.body %>
 </b>

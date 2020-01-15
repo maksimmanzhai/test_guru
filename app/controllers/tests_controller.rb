@@ -6,7 +6,6 @@ class TestsController < ApplicationController
   before_action :set_user_select, only: %i[new create edit update]
   before_action :set_category_select, only: %i[new create edit update]
 
-
   def index
     @tests = Test.all
   end
