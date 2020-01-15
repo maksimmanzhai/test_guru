@@ -4,7 +4,7 @@ module CompletedTestsHelper
   end
 
   def progress(completed_test)
-    "Progress: current_question / #{completed_test.test.questions.count}"
+    "Progress: #{completed_test.current_question_index} / #{completed_test.test.questions.count}"
   end
 
 end

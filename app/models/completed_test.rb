@@ -14,8 +14,11 @@ class CompletedTest < ApplicationRecord
     if correct_answer?(answer_ids)
       self.correct_questions += 1
     end
-
     save!
+  end
+
+  def current_question_index
+    test.questions.order(:id).index(current_question) + 1
   end
 
   private
