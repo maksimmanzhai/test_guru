@@ -15,7 +15,6 @@ class CompletedTest < ApplicationRecord
       self.correct_questions += 1
     end
 
-    self.current_question = next_question
     save!
   end
 
@@ -26,7 +25,7 @@ class CompletedTest < ApplicationRecord
   end
 
   def before_validation_set_next_question
-    next_question = self.current_question
+    self.current_question = next_question
   end
 
   def correct_answer?(answer_ids)
