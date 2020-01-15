@@ -4,6 +4,7 @@ class CompletedTest < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true, touch: true
 
   before_validation :before_validation_set_first_question, on: :create
+  before_validation :before_validation_set_next_question, on: :update
 
   def completed?
     current_question.nil?
@@ -22,6 +23,10 @@ class CompletedTest < ApplicationRecord
 
   def before_validation_set_first_question
     self.current_question = test.questions.first if test.present?
+  end
+
+  def before_validation_set_next_question
+    next_question = self.current_question
   end
 
   def correct_answer?(answer_ids)
