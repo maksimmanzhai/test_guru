@@ -3,6 +3,9 @@ class TestsController < ApplicationController
   before_action :set_test, only: %i[show edit update destroy start]
   before_action :set_user, only: :start
 
+  before_action :set_user_select, only: %i[new create edit update]
+  before_action :set_category_select, only: %i[new create edit update]
+
   def index
     @tests = Test.all
   end
@@ -47,7 +50,7 @@ class TestsController < ApplicationController
   private
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id)
+    params.require(:test).permit(:title, :level, :category_id, :author_id)
   end
 
   def set_test
@@ -56,6 +59,14 @@ class TestsController < ApplicationController
 
   def set_user
     @user = User.first
+  end
+  
+  def set_user_select
+    @user_options = User.all.map{ |u| [ u.username, u.id ] }
+  end
+
+  def set_category_select
+    @category_options = Category.all.map{ |c| [ c.title, c.id ] }
   end
 
 end
