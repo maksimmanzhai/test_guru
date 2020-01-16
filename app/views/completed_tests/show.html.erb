@@ -1,0 +1,17 @@
+<h1><%= completed_test_header(@completed_test) %></h1>
+<h2><%= progress(@completed_test) %></h2>
+<b>
+  <%= @completed_test.current_question.body %>
+</b>
+
+<%= form_with url: completed_test_path(@completed_test), local: true, method: :put do |form| %>
+  <%= form.collection_check_boxes :answer_ids, @completed_test.current_question.answers, :id, :title, include_hidden: false do |b| %>
+    <p>
+      <%= b.check_box id: "answer_ids_#{b.object.id}" %>
+      <%= b.label %>
+    </p>
+  <% end %>
+  <p><%= form.submit 'Next' %></p>
+<% end %>
+
+<%= link_to 'Back to test', test_path(@completed_test.test.id) %>

@@ -11,7 +11,7 @@ class Answer < ApplicationRecord
   private
 
   def answer_count
-    if question.answers.count >= 4
+    if question.answers.count >= MAX_COUNT_OF_ANSWERS_TO_QUESTION
       errors.add(:MAX_COUNT_OF_ANSWERS_TO_QUESTION, 'There should be no more than 4 answers')
     end
   end
