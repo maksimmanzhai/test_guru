@@ -10,6 +10,8 @@ class ApplicationController < ActionController::Base
     unless current_user
       redirect_to login_path, alert: 'Are you a Guru? Verify your Username and Password please.'
     end
+
+    cookies[:username] = current_user&.username
   end
 
   def current_user
