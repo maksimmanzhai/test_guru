@@ -10,12 +10,7 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-        <p class="nav user">Welcome, <b><%= current_user.username %></b> Guru</p>
-        <p class="nav user"><%= link_to 'Log out', logout_path, method: "delete" %>
-      <% else %>
-        <%= link_to 'Log in', login_path %>
-    <% end %>
+    <%= render 'shared/header' %>
     <%= yield %><br>
     <p><%= render 'shared/footer' %></p>
     <%= debug(params) if Rails.env.development? %>
