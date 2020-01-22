@@ -5,6 +5,7 @@ class AddEmailToUsers < ActiveRecord::Migration[6.0]
   end
 
   def down
+    remove_index :users, :email
     remove_column :users, :email, :string
   end
 end
