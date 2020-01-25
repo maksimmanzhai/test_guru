@@ -44,5 +44,4 @@ module CompletedTestsHelper
     85
   end
 
-
 end
