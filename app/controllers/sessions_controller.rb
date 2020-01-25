@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
       if cookies[:last_visited_path].present?
-        redirect_to cookies[:last_visited_path]
+        rediect_to cookies[:last_visited_path] || root_path
       else
         render :new
       end
