@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'tests#index'
 
-  devise_for :users
+  devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout }
 
   resources :tests do
     resources :questions, shallow: true, except: %i[index] do
