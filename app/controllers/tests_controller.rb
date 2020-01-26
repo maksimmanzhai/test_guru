@@ -2,7 +2,6 @@ class TestsController < ApplicationController
 
   before_action :authenticate_user!
   before_action :set_test, only: %i[show edit update destroy start]
-  before_action :set_user, only: :start
 
   before_action :set_user_select, only: %i[new create edit update]
   before_action :set_category_select, only: %i[new create edit update]
@@ -44,30 +43,26 @@ class TestsController < ApplicationController
   end
 
   def start
-    @user.tests.push(@test)
-    redirect_to @user.completed_test(@test)
+    current_user.tests.push(@test)
+    redirect_to current_user.completed_test(@test)
   end
 
   private
 
-  def test_params
-    params.require(:test).permit(:title, :level, :category_id, :author_id)
-  end
+    def test_params
+      params.require(:test).permit(:title, :level, :category_id, :author_id)
+    end
 
-  def set_test
-    @test = Test.find(params[:id])
-  end
+    def set_test
+      @test = Test.find(params[:id])
+    end
 
-  def set_user
-    @user = User.first
-  end
-  
-  def set_user_select
-    @user_options = User.all.map{ |u| [ u.username, u.id ] }
-  end
+    def set_user_select
+      @user_options = User.all.map{ |u| [ u.email, u.id ] }
+    end
 
-  def set_category_select
-    @category_options = Category.all.map{ |c| [ c.title, c.id ] }
-  end
+    def set_category_select
+      @category_options = Category.all.map{ |c| [ c.title, c.id ] }
+    end
 
 end
