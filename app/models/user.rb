@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   has_many :completed_tests
   has_many :tests, through: :completed_tests
-  has_many :author_tests, :class_name => 'Test', foreign_key: 'author_id'
+  has_many :author_tests, class_name: 'Test', foreign_key: :author_id
 
   def list_of_tests(level)
     self.tests.where("level = ?", level)
@@ -18,6 +18,10 @@ class User < ApplicationRecord
 
   def completed_test(test)
     completed_tests.order(id: :desc).find_by(test_id: test.id)
+  end
+
+  def admin?
+    self.class.is_a?(Admin)
   end
 
 end

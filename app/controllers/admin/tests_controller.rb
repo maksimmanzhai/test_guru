@@ -1,6 +1,6 @@
 class Admin::TestsController < Admin::BaseController
 
-  before_action :set_test, only: %i[show edit update destroy start]
+  before_action :set_test, only: %i[show edit update destroy]
   before_action :set_category_select, only: %i[new create edit update]
 
   def index
@@ -19,7 +19,7 @@ class Admin::TestsController < Admin::BaseController
 
   def create
     @test = Test.new(test_params)
-    @test.author_id = current_user.id
+    # @test.author_id = current_user.id
     if @test.save
       redirect_to admin_test_path(@test)
     else
@@ -38,11 +38,6 @@ class Admin::TestsController < Admin::BaseController
   def destroy
     @test.destroy
     redirect_to tests_path
-  end
-
-  def start
-    current_user.tests.push(@test)
-    redirect_to current_user.completed_test(@test)
   end
 
   private
