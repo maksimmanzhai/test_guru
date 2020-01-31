@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable,
          :registerable,
          :recoverable,
@@ -10,7 +8,7 @@ class User < ApplicationRecord
 
   has_many :completed_tests
   has_many :tests, through: :completed_tests
-  has_many :author_tests, class_name: 'Test', foreign_key: :author_id
+  has_many :authors_tests, class_name: 'Test', foreign_key: 'author_id'
 
   def list_of_tests(level)
     self.tests.where("level = ?", level)
