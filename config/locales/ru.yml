@@ -1,5 +1,9 @@
 ru:
-  hello: 'Привет мир'
+
+  users:
+    sessions:
+      new:
+        login: 'Войти в профиль'
 
   helpers:
     submit:
@@ -19,14 +23,34 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
+    header:
+      greeting: "Добро пожаловать, %{email} Гуру"
+      login: 'Войти в профиль'
+      signup: 'Зарегистрироваться'
+      logout: 'Выйти из профиля'
+    footer:
+      all_tests: 'Все тесты'
+      author: 'Автор'
+      about: ' О проекте'
 
   tests:
     index:
       header: 'Доступные тесты'
+      title: 'Название'
+      level: 'Уровень'
+      questions: 'Вопросы'
+      action: 'Действия'
+      start: 'Начать'
 
   completed_tests:
     result:
       header: "Тест %{title} успешно завершен"
+      test_successful: 'Тест успешно завершен. Результат:'
+      test_failed: 'Тест провален. Результат:'
+    show:
+      passing: 'Прохождение теста по %{title}'
+      progress: 'Прогресс'
+      next_question: 'Следущий вопрос'
 
   admin:
     tests:

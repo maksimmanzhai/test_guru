@@ -1,5 +1,8 @@
 en:
-  hello: 'Hello world'
+  users:
+    sessions:
+      new:
+        login: 'Log In'
 
   helpers:
     submit:
@@ -17,14 +20,33 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+    header:
+      greeting: "Welcome, %{email} Guru"
+      login: 'Log In'
+      signup: 'Sign Up'
+      logout: 'Log Out'
+    footer:
+      all_tests: 'All tests'
+      author: 'Author'
+      about: 'About'
 
   tests:
     index:
       header: 'Tricky Tests'
+      title: 'Title'
+      level: 'Level'
+      questions: 'Questions'
+      action: 'Action'
+
 
   completed_tests:
     result:
       header: "Test %{title} was completed"
+      
+    show:
+      passing: 'Passing the %{title} test'
+      progress: 'Progress'
+      next_question: 'Next Question'
 
   admin:
     tests:
