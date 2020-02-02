@@ -56,6 +56,11 @@ ru:
     tests:
       create:
         success: 'Тест успешно создан'
+      category:
+        backend: 'Бэкенд'
+        frontend: 'Фронтенд'
+        mobile_development: 'Мобильная разработка'
+        machine_learning: 'Машинное обучение'
       index:
         header: 'Доступные тесты'
         title: 'Название'

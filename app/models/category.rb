@@ -4,4 +4,8 @@ class Category < ApplicationRecord
   has_many :tests
 
   validates :title, presence: true
+
+  def translated_title
+    I18n.t(title, :scope => 'category')
+  end
 end

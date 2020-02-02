@@ -1,5 +1,5 @@
 class Test < ApplicationRecord
-  belongs_to :author_tests, class_name: 'User', foreign_key: 'author_id'
+  belongs_to :user, class_name: 'User', foreign_key: 'author_id'
   belongs_to :category, touch: true
   has_many :questions
   has_many :answers, through: :questions

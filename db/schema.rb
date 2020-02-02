@@ -90,4 +90,5 @@ ActiveRecord::Schema.define(version: 2020_01_26_180458) do
   add_foreign_key "completed_tests", "users"
   add_foreign_key "questions", "tests"
   add_foreign_key "tests", "categories"
+  add_foreign_key "tests", "users", column: "author_id"
 end
