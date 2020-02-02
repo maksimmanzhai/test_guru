@@ -38,7 +38,6 @@ en:
       questions: 'Questions'
       action: 'Action'
 
-
   completed_tests:
     result:
       header: "Test %{title} was completed"
@@ -54,6 +53,19 @@ en:
         success: 'Test was successfully created'
       index:
         header: 'Tricky Tests'
+        title: 'Title'
+        level: 'Level'
+        questions: 'Questions'
+        action: 'Actions'
+        new_test: 'New test'
+      test:
+        show: 'Show'
+        edit: 'Edit'
+        delete: 'Delete'
+    nav:
+      header: 'Admin Panel TestGuru'
+      greeting: "Welcome, %{email} Guru"
+      logout: 'Logout'
 
   tests_mailer:
     completed_test:
