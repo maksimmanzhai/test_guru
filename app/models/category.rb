@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# class category
 class Category < ApplicationRecord
   default_scope { order(title: :asc) }
 
@@ -6,6 +9,6 @@ class Category < ApplicationRecord
   validates :title, presence: true
 
   def translated_title
-    I18n.t(title, :scope => 'category')
+    I18n.t(title, scope: 'category')
   end
 end

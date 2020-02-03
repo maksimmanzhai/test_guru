@@ -36,12 +36,12 @@ module CompletedTestsHelper
 
   private
 
-    def questions_total(completed_test)
-      completed_test.test.questions.count
-    end
+  def questions_total(completed_test)
+    completed_test.test.questions.count
+  end
 
-    def minimal_percent
-      85
-    end
+  def minimal_percent
+    85
+  end
 
 end
