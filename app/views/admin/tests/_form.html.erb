@@ -1,4 +1,6 @@
 <%= form_with model: [:admin, @test], local: true do |form| %>
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
   <%= render'shared/errors', resource: @test %>
 
   <p>

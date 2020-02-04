@@ -1,5 +1,3 @@
-<h1>The <%= @completed_test.test.title %> Test was completed</h1>
+<h1><%= t('.header', title: @completed_test.test.title) %></h1>
 
 <h2><%= completed_test_result(@completed_test) %></h2>
-
-<%= link_to 'Back to test', tests_path %>
