@@ -66,6 +66,7 @@ en:
       header: 'Admin Panel TestGuru'
       greeting: "Welcome, %{email} Guru"
       logout: 'Logout'
+      panel: 'Admin Panel'
 
   tests_mailer:
     completed_test:

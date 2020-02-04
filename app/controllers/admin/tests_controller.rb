@@ -19,7 +19,7 @@ class Admin::TestsController < Admin::BaseController
 
   def create
     @test = Test.new(test_params)
-    @test.author_id = current_user.id
+    current_user.created_tests.new
     if @test.save
       redirect_to [:admin, @test], notice: t('.success')
     else
@@ -42,16 +42,16 @@ class Admin::TestsController < Admin::BaseController
 
   private
 
-    def test_params
-      params.require(:test).permit(:title, :level, :category_id)
-    end
+  def test_params
+    params.require(:test).permit(:title, :level, :category_id)
+  end
 
-    def set_test
-      @test = Test.find(params[:id])
-    end
+  def set_test
+    @test = Test.find(params[:id])
+  end
 
-    def set_category_select
-      @category_options = Category.all.map{ |c| [ c.title, c.id ] }
-    end
+  def set_category_select
+    @category_options = Category.all.map{ |c| [ c.title, c.id ] }
+  end
 
 end

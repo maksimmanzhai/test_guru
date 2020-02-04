@@ -76,6 +76,7 @@ ru:
       header: 'Панель администрирования TestGuru'
       greeting: "Добро пожаловать, %{email} Гуру"
       logout: 'Выйти из профиля'
+      panel: 'Панель администрирования'
 
   tests_mailer:
     completed_test:
