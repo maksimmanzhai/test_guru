@@ -18,8 +18,8 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def create
-    @test = Test.new(test_params)
-    current_user.created_tests.new
+    @test = current_user.created_tests.new(test_params)
+
     if @test.save
       redirect_to [:admin, @test], notice: t('.success')
     else
