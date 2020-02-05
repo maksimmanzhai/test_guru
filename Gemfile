@@ -28,6 +28,10 @@ gem 'devise'
 # LOCALIZE
 gem 'rails-i18n'
 
+# UI
+gem 'jquery-rails'
+gem 'bootstrap'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
