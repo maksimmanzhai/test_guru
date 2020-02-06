@@ -20,7 +20,7 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
-    header:
+    nav:
       greeting: "Welcome, %{email} Guru"
       login: 'Log In'
       signup: 'Sign Up'

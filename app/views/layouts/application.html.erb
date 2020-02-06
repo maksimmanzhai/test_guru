@@ -13,12 +13,14 @@
   </head>
 
   <body>
-    <%= render 'shared/header' %>
+    <div class="container">
+      <%= render 'shared/nav' %>
 
-    <%= render 'shared/flash' %>
+      <%= render 'shared/flash' %>
 
-    <%= yield %><br>
-    <p><%= render 'shared/footer' %></p>
-    <%= debug(params) if Rails.env.development? %>
+      <%= yield %><br>
+      <p><%= render 'shared/footer' %></p>
+      <%= debug(params) if Rails.env.development? %>
+    </div>
   </body>
 </html>
