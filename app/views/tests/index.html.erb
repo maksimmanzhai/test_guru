@@ -1,12 +1,16 @@
-<h1><%= t('tests.index.header') %></h1>
-<table>
-  <tr>
-    <th><%= t('tests.index.title') %></th>
-    <th><%= t('tests.index.level') %></th>
-    <th><%= t('tests.index.questions') %></th>
-    <th><%= t('tests.index.action') %></th>
-  </tr>
+<div>
+  <h1 class="d-flex justify-content-center">
+    <%= t('tests.index.header') %>
+  </h1>
+  <table class="d-flex justify-content-center table-striped">
+    <tr>
+      <th><%= t('tests.index.title') %></th>
+      <th><%= t('tests.index.level') %></th>
+      <th><%= t('tests.index.questions') %></th>
+      <th><%= t('tests.index.action') %></th>
+    </tr>
 
-  <%= render @tests %>
+    <%= render @tests %>
 
-</table>
+  </table>
+</div>
