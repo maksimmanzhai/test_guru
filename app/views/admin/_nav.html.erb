@@ -1,10 +1,9 @@
 <div class="navbar navbar-light bg-light">
-  <%= link_to 'Test Guru', tests_path, class: 'navbar-brand' %>
+  <%= link_to 'Test Guru', admin_tests_path, class: 'navbar-brand' %>
   <span class="navbar-text">
     <%= t('.header') %>
     <div>
       <%= t('admin.nav.greeting', email: current_user.email) %></b> | 
-      <%= link_to t('admin.nav.panel'), admin_tests_path %></b> | 
       <%= link_to t('admin.nav.logout'), destroy_user_session_path, method: :delete %>
     </div>
   </span>
