@@ -1,5 +1,6 @@
+# frozen_string_literal: true
+
 class Admin::TestsController < Admin::BaseController
-  
   before_action :set_test, only: %i[show edit update destroy]
   before_action :set_category_select, only: %i[new create edit update]
 
@@ -7,15 +8,13 @@ class Admin::TestsController < Admin::BaseController
     @tests = Test.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @test = Test.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @test = current_user.created_tests.new(test_params)
@@ -51,7 +50,6 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def set_category_select
-    @category_options = Category.all.map{ |c| [ c.title, c.id ] }
+    @category_options = Category.all.map { |c| [c.title, c.id] }
   end
-
 end

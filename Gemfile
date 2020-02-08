@@ -29,13 +29,12 @@ gem 'devise'
 gem 'rails-i18n'
 
 # UI
-gem 'jquery-rails'
 gem 'bootstrap'
-
-gem 'sass-rails'
 gem 'coffee-rails'
-gem 'uglifier'
 gem 'foundation-icons-sass-rails'
+gem 'jquery-rails'
+gem 'sass-rails'
+gem 'uglifier'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
