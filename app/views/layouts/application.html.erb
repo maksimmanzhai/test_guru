@@ -14,7 +14,14 @@
 
   <body>
     <div class="container">
-      <%= render 'shared/nav' %>
+
+      <% if user_signed_in? %>
+        <% if current_user.admin? %>
+          <%= render 'admin/nav' %>
+        <% else %>
+          <%= render 'shared/nav' %>
+        <% end %>
+      <% end %>
 
       <%= render 'shared/flash' %>
 

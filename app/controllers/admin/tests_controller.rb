@@ -1,5 +1,5 @@
 class Admin::TestsController < Admin::BaseController
-
+  
   before_action :set_test, only: %i[show edit update destroy]
   before_action :set_category_select, only: %i[new create edit update]
 
