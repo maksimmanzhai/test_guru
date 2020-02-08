@@ -1,5 +1,12 @@
 <div class="navbar navbar-light bg-light">
-  <%= link_to 'Test Guru', admin_tests_path, class: 'navbar-brand' %>
+  <div class="navbar-brand d-inline-block">
+    <%= link_to 'Test Guru', tests_path %>
+
+    <%= link_to admin_tests_path do %>
+    <i class="fi-widget"></i>
+    <% end %>
+  </div>
+
   <span class="navbar-text">
     <%= t('.header') %>
     <div>
