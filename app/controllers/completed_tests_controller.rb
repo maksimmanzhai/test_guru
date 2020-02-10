@@ -1,7 +1,7 @@
 class CompletedTestsController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :set_completed_test, only: %i[show update result]
+  before_action :set_completed_test, only: %i[show update result gist]
 
   def show
   end
@@ -18,6 +18,18 @@ class CompletedTestsController < ApplicationController
     else
       render :show
     end
+  end
+
+  def gist
+    result = GistQuestionService.new(@completed_test.current_question).call
+
+    flash_options = if result.success?
+      { notice: t('.success') }
+    else
+      { alert: t('.failure') }
+    end
+
+    redirect_to @completed_test, flash_options
   end
 
   private
