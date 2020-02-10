@@ -28,6 +28,9 @@ gem 'devise'
 # LOCALIZE
 gem 'rails-i18n'
 
+# NETWORKING
+gem 'faraday'
+
 # UI
 gem 'bootstrap'
 gem 'coffee-rails'
