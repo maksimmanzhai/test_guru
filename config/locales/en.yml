@@ -41,11 +41,13 @@ en:
   completed_tests:
     result:
       header: "Test %{title} was completed"
-      
     show:
       passing: 'Passing the %{title} test'
       progress: 'Progress'
       next_question: 'Next Question'
+    gist:
+      success: 'Gist was successfully created!'
+      failure: 'An error occurred while saving gist'
 
   admin:
     tests:

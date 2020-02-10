@@ -51,6 +51,9 @@ ru:
       passing: 'Прохождение теста по %{title}'
       progress: 'Прогресс'
       next_question: 'Следущий вопрос'
+    gist:
+      success: 'Gist успешно сохранен'
+      failure: 'Во время сохранения gist произошла ошибка'
 
   admin:
     tests:
