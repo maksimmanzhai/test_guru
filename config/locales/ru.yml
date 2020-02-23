@@ -1,5 +1,4 @@
 ru:
-
   users:
     sessions:
       new:
@@ -84,3 +83,5 @@ ru:
   tests_mailer:
     completed_test:
       subject: 'Вы завершили тест на TestGuru'
+
+  question_of_the_test: "Вопрос теста \"%{test_title}\""
