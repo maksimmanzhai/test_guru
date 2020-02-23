@@ -46,7 +46,7 @@ en:
       progress: 'Progress'
       next_question: 'Next Question'
     gist:
-      success: 'Gist was successfully created!'
+      success: "Question was <a target=\"_blank\" href=\"%{url}\">send</a>"
       failure: 'An error occurred while saving gist'
 
   admin:

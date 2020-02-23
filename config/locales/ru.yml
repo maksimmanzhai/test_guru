@@ -52,7 +52,7 @@ ru:
       progress: 'Прогресс'
       next_question: 'Следущий вопрос'
     gist:
-      success: 'Gist успешно сохранен'
+      success: "Вопрос успешно <a target=\"_blank\" href=\"%{url}\">отправлен</a>"
       failure: 'Во время сохранения gist произошла ошибка'
 
   admin:

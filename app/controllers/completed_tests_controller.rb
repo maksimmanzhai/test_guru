@@ -25,7 +25,7 @@ class CompletedTestsController < ApplicationController
   rescue Octokit::Error
     redirect_to @completed_test, { alert: t('.failure') }
   else
-    redirect_to @completed_test, { notice: t('.success') }
+    redirect_to @completed_test, { notice: t('.success'), url:result.html_url }
   end
 
   private
