@@ -7,7 +7,12 @@ class GistQuestionService
   end
 
   def call
-    @client.create_gist(gist_params)
+    public: true,
+    files: {
+      'test-guru-question': {
+        content: gist: gist_content
+      }
+    }
   end
 
   private
