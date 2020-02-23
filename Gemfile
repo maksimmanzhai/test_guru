@@ -30,6 +30,7 @@ gem 'rails-i18n'
 
 # NETWORKING
 gem 'faraday'
+gem 'octokit'
 
 # UI
 gem 'bootstrap'
