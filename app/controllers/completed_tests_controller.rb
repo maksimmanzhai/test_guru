@@ -25,7 +25,9 @@ class CompletedTestsController < ApplicationController
   rescue Octokit::Error
     redirect_to @completed_test, { alert: t('.failure') }
   else
-    redirect_to @completed_test, { notice: t('.success'), url:result.html_url }
+    gist = current_user.gists.new
+    gist.register(url: result.html_url, question_id: @completed_test.current_question.id)
+    redirect_to @completed_test, { success: t('.success', url: result.html_url) }
   end
 
   private

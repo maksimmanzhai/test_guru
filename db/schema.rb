@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_04_175032) do
+ActiveRecord::Schema.define(version: 2020_02_23_194737) do
 
   create_table "answers", force: :cascade do |t|
     t.string "title", null: false
@@ -37,6 +37,16 @@ ActiveRecord::Schema.define(version: 2020_02_04_175032) do
     t.index ["current_question_id"], name: "index_completed_tests_on_current_question_id"
     t.index ["test_id"], name: "index_completed_tests_on_test_id"
     t.index ["user_id"], name: "index_completed_tests_on_user_id"
+  end
+
+  create_table "gists", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "question_id"
+    t.text "url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_gists_on_question_id"
+    t.index ["user_id"], name: "index_gists_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -88,6 +98,8 @@ ActiveRecord::Schema.define(version: 2020_02_04_175032) do
   add_foreign_key "completed_tests", "questions", column: "current_question_id"
   add_foreign_key "completed_tests", "tests"
   add_foreign_key "completed_tests", "users"
+  add_foreign_key "gists", "questions"
+  add_foreign_key "gists", "users"
   add_foreign_key "questions", "tests"
   add_foreign_key "tests", "categories"
   add_foreign_key "tests", "users", column: "author_id"
