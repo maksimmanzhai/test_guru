@@ -1,5 +1,4 @@
 ru:
-
   users:
     sessions:
       new:
@@ -51,6 +50,9 @@ ru:
       passing: 'Прохождение теста по %{title}'
       progress: 'Прогресс'
       next_question: 'Следущий вопрос'
+    gist:
+      success: "Вопрос успешно <a target=\"_blank\" href=\"%{url}\">отправлен</a>"
+      failure: 'Во время сохранения gist произошла ошибка'
 
   admin:
     tests:
@@ -77,7 +79,52 @@ ru:
       greeting: "Добро пожаловать, %{email} Гуру"
       logout: 'Выйти из профиля'
       panel: 'Панель администрирования'
+    gists:
+      index:
+        gists: "Gist'ы"
+        user: "Пользователь"
+        question: "Вопрос"
+        gist_url: "Ссылка на gist"
+    home:
+      index:
+        header: "Администрирование"
+      categories:
+        categories: "Категории"
+        tests: "Тесты" 
+        users: "Пользователи"
+        gists: "Обращения"
+        badges: "Достижения"
+        edit: "Редактировать"
+        show: "Показать"
+        tests_count:
+          one: "Всего %{count} тест"
+          few: "Всего %{count} теста"
+          many: "Всего %{count} тестов"
+          other: "Всего %{count} тестов"
+        users_count:
+          one: "Всего %{count} пользователь"
+          few: "Всего %{count} пользователя"
+          many: "Всего %{count} пользователей"
+          other: "Всего %{count} пользователей"
+        gists_count:
+          one: "Всего %{count} обращение"
+          few: "Всего %{count} обращения"
+          many: "Всего %{count} обращений"
+          other: "Всего %{count} обращений"
+        badges_count:
+          one: "Всего %{count} достижение"
+          few: "Всего %{count} достижения"
+          many: "Всего %{count} достижений"
+          other: "Всего %{count} достиений"
+        categories_count:
+          one: "Всего %{count} категория"
+          few: "Всего %{count} категории"
+          many: "Всего %{count} категорий"
+          other: "Всего %{count} категорий"
+
 
   tests_mailer:
     completed_test:
       subject: 'Вы завершили тест на TestGuru'
+
+  question_of_the_test: "Вопрос теста \"%{test_title}\""

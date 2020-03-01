@@ -1,7 +1,7 @@
 class CompletedTestsController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :set_completed_test, only: %i[show update result]
+  before_action :set_completed_test, only: %i[show update result gist]
 
   def show
   end
@@ -18,6 +18,16 @@ class CompletedTestsController < ApplicationController
     else
       render :show
     end
+  end
+
+  def gist
+    result = GistQuestionService.new(@completed_test.current_question).call
+  rescue Octokit::Error
+    redirect_to @completed_test, { alert: t('.failure') }
+  else
+    gist = current_user.gists.new
+    gist.register(url: result.html_url, question_id: @completed_test.current_question.id)
+    redirect_to @completed_test, { success: t('.success', url: result.html_url) }
   end
 
   private
